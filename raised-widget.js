@@ -5,7 +5,7 @@ var RaisedWidget = class RaisedWidget {
         this.web3Provider = new Web3.providers.HttpProvider("https://mainnet.infura.io/Nl4i6Kxw0VMwcAuG4aLj");
         this.web3 = new Web3(this.web3Provider);
 
-        $.getJSON('http://api.etherscan.io/api?module=contract&action=getabi&address=' + this.contractAddress, (data) => {
+        $.getJSON('https://api.etherscan.io/api?module=contract&action=getabi&address=' + this.contractAddress, (data) => {
             this.contractABI = JSON.parse(data.result);
             if (this.contractABI != ''){
                 this.contract = this.web3.eth.contract(this.contractABI).at(this.contractAddress);
